@@ -86,7 +86,7 @@ foreach ($posts as $post) {
             $img_url = $media['source_url'];
 
             // Download image
-            $saveDir = __DIR__ . '/images/';
+            $saveDir = __DIR__ . '../images/';
             if (!is_dir($saveDir)) mkdir($saveDir, 0755, true);
 
             $ext = pathinfo(parse_url($img_url, PHP_URL_PATH), PATHINFO_EXTENSION);
@@ -129,8 +129,17 @@ foreach ($posts as $post) {
 
     // ----- Insert drama if new -----
     if (!$drama) {
-        $stmt = $pdo->prepare("INSERT INTO dramas (wp_id, title, slug, featured_img, category_id) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$post['id'], $post['title']['rendered'], $post['slug'], $img, $category_id]);
+        $stmt = $pdo->prepare("
+        INSERT INTO dramas (wp_id, title, slug, featured_img, category_id, status)
+        VALUES (?, ?, ?, ?, ?, 0)
+    ");
+        $stmt->execute([
+            $post['id'],
+            $post['title']['rendered'],
+            $post['slug'],
+            $img,
+            $category_id
+        ]);
         $dramaId = $pdo->lastInsertId();
         $addedNew = true;
     } else {
