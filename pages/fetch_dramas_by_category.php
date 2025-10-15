@@ -1,5 +1,5 @@
 <?php
-include '../lib/drama_lib.php';
+include './admin/lib/drama_lib.php';
 $dramaObj = new Drama();
 
 $slug = $_GET['slug'] ?? 'all';
