@@ -11,7 +11,7 @@ $latestDramas = $dramaObj->getAllStatus0(9);
             <h2 class="text-xl lg:text-2xl font-bold text-white">
                 Latest Drama
             </h2>
-            <a href="/pages/drama?cat=all" class="px-2 lg:px-4 py-1 lg:py-2 bg-green-600 rounded text-sm">
+            <a href="/pages/drama?cat=all" class="px-2 lg:px-4 py-1 lg:py-2 bg-indigo-500 rounded text-sm">
                 See All
             </a>
         </div>
@@ -24,7 +24,7 @@ $latestDramas = $dramaObj->getAllStatus0(9);
                         <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
                             alt="<?= htmlspecialchars($drama['title']) ?>"
                             class="w-full h-40 rounded-lg mb-2">
-                        <h3 class="text-sm font-semibold text-white">
+                        <h3 class="text-sm font-semibold text-white p-2">
                             <?= htmlspecialchars($drama['title']) ?>
                         </h3>
                     </a>

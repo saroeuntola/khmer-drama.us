@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Drama Dubbed Khmer</title>
     <link rel="stylesheet" href="../src/output.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/logo.png" type="image/png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
     <script>
@@ -50,7 +52,7 @@
 
         <p class="mb-6 text-lg leading-relaxed">
             Have questions, suggestions, or want to report content? We’d love to hear from you! Please fill out the form below or email us directly at
-            <a href="mailto:dramadubbedkhmer" class="text-indigo-400 underline">dramadubbedkhmer</a>.
+            <a href="mailto:saroeuntola123@gmail.com" class="text-indigo-400 underline">Emall</a>.
         </p>
 
         <form action="#" method="POST" class="bg-gray-800 p-8 rounded-lg shadow-md">

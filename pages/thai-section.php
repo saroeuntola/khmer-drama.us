@@ -13,7 +13,7 @@ $chinaDramas = array_slice($chinaDramas, 0, 9);
             <h2 class="text-xl lg:text-2xl font-bold text-white">
                 Thai Drama
             </h2>
-            <a href="/pages/drama?cat=thai-drama" class="px-2 lg:px-4 py-1 lg:py-2 bg-green-600 rounded text-sm">
+            <a href="/pages/drama?cat=thai-drama" class="px-2 lg:px-4 py-1 lg:py-2 bg-indigo-500 rounded text-sm">
                 See All
             </a>
         </div>

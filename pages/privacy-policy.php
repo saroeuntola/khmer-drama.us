@@ -122,7 +122,7 @@
             Episodes or videos are <span class="font-semibold">not hosted on this site or its servers</span>. <span class="font-semibold">Drama Dubbed Khmer</span> only links to videos hosted on external websites, such as YouTube or other streaming platforms. All content is the property of its respective owners, and we do not claim any copyright.
         </p>
         <p class="mb-4 text-lg leading-relaxed">
-            If you believe any content on our site infringes your copyright, please <a href="mailto:dramadubbedkhmer" class="text-indigo-400 underline">contact us</a>, and we will promptly remove the content.
+            If you believe any content on our site infringes your copyright, please <a href="mailto:saroeuntola123@gmail.com" class="text-indigo-400 underline">contact us</a>, and we will promptly remove the content.
         </p>
         <!-- <p class="mb-4 text-lg leading-relaxed">
             For the latest content or updates, please refresh your browser or visit the original video source. Third-party trademarks are used solely to describe the content indexed herein. No license, endorsement, or affiliation with the trademark owners is implied.
@@ -135,7 +135,7 @@
 
         <h2 class="text-2xl font-semibold mb-3 mt-6 text-indigo-400">Contact Us</h2>
         <p class="mb-4 text-lg leading-relaxed">
-            For questions about this Privacy Policy or to request content removal, email us at <a href="mailto:dramadubbedkhmer" class="text-indigo-400 underline">dramadubbedkhmer</a>.
+            For questions about this Privacy Policy or to request content removal, contact us at <a href="mailto:saroeuntola123@gmail.com" class="text-indigo-400 underline">Email</a>.
         </p>
 
     </div>

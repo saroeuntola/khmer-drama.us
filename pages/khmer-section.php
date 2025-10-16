@@ -11,9 +11,9 @@ $chinaDramas = array_slice($chinaDramas, 0, 9);
     <div class="max-w-5xl mx-auto px-4">
         <div class="flex justify-between item-center mb-3 text-white">
             <h2 class="text-xl lg:text-2xl font-bold">
-               Khmer Drama
+                Khmer Drama
             </h2>
-            <a href="/pages/drama?cat=khmer-drama" class="px-2 lg:px-4 py-1 lg:py-2 bg-green-600 rounded text-sm">
+            <a href="/pages/drama?cat=khmer-drama" class="px-2 lg:px-4 py-1 lg:py-2 bg-indigo-500 rounded text-sm">
                 See All
             </a>
         </div>
