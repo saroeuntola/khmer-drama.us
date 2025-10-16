@@ -12,29 +12,34 @@
             <a href="/pages/privacy-policy" class="hover:text-indigo-400 transition-colors duration-200">Privacy Policy</a>
 
         </div>
-
         <!-- Social Media Icons -->
-        <!-- Contact Section -->
         <div class="flex flex-col items-start space-y-2">
-
-
             <!-- Social Media Icons -->
             <div class="flex space-x-4 items-center">
 
                 <!-- Facebook -->
-                <a href="https://facebook.com/yourpage" target="_blank" class="hover:opacity-70 transition-colors duration-200" title="Facebook">
-                    <img src="../assets/img/fb.png" alt="facebook logo" class="w-6">
-                </a>
+                <img
+                    src="../assets/img/fb.png"
+                    alt="Facebook logo"
+                    class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
 
                 <!-- Telegram -->
-                <a href="https://t.me/yourusername" target="_blank" class="hover:opacity-70 transition-colors duration-200" title="Telegram">
-                    <img src="../assets/img/tele.png" alt="telegram logo" class="w-6">
-                </a>
+                <img
+                    src="../assets/img/tele.png"
+                    alt="Telegram logo"
+                    class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
+                    title="Telegram"
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
 
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="hover:opacity-70 transition-colors duration-200" title="LinkedIn">
-                    <img src="../assets/img/linkedin.svg" alt="linkedin logo" class="w-6">
-                </a>
+                <img
+                    src="../assets/img/linkedin.svg"
+                    alt="linkedin logo"
+                    class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
+
+
             </div>
         </div>
 
