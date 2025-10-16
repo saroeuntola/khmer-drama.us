@@ -38,7 +38,7 @@ if ($categorySlug === 'all') {
     $stmt = $dramaObj->db->prepare("
         SELECT * FROM dramas 
         WHERE status = 0 
-        ORDER BY id ASC 
+        ORDER BY created_at DESC 
         LIMIT :limit OFFSET :offset
     ");
     $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
@@ -51,7 +51,7 @@ if ($categorySlug === 'all') {
         SELECT d.* FROM dramas d 
         INNER JOIN categories c ON d.category_id = c.id 
         WHERE c.slug = :slug AND d.status = 0
-        ORDER BY d.id ASC 
+        ORDER BY d.created_at DESC 
         LIMIT :limit OFFSET :offset
     ");
     $stmt->bindValue(':slug', $categorySlug, PDO::PARAM_STR);
@@ -71,17 +71,18 @@ if ($categorySlug === 'all') {
     $total = $countStmt->fetchColumn();
 }
 
-
 // Total pages
 $totalPages = ceil($total / $limit);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
+    <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
     <title>Asian Drama Dubbed in Khmer | Chinese, Korean, Thai & Khmer Series </title>
 
     <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese, Korean, Thai, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
@@ -109,22 +110,36 @@ $totalPages = ceil($total / $limit);
     <!-- Favicon -->
     <link rel="icon" href="../images/logo.png" type="image/png">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-2DNHSGCJ65');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WZ349ZZZ');</script>
-<!-- End Google Tag Manager -->
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2DNHSGCJ65');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Schema Markup (SEO JSON-LD) -->
     <script type="application/ld+json">
@@ -145,12 +160,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     </script>
 </head>
+
 <body class="bg-gray-900 text-white">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-   <?php
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <?php
     include 'navbar.php'
     ?>
     <main class="max-w-5xl mx-auto px-4 py-5 pt-28">
@@ -188,60 +204,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Pagination -->
-<?php if ($totalPages > 1): ?>
-    <div class="flex flex-wrap justify-center items-center mt-8 sm:text-base gap-2">
-        <!-- Prev Button -->
-        <?php if ($page > 1): ?>
-            <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page - 1 ?>"
-               class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
-                « Prev
-            </a>
+        <?php if ($totalPages > 1): ?>
+            <div class="flex flex-wrap justify-center items-center mt-8 sm:text-base gap-2">
+                <!-- Prev Button -->
+                <?php if ($page > 1): ?>
+                    <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page - 1 ?>"
+                        class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
+                        « Prev
+                    </a>
+                <?php endif; ?>
+
+                <?php
+                $visibleRange = 2; // show this many pages around current
+                $ellipsisShownLeft = false;
+                $ellipsisShownRight = false;
+
+                for ($i = 1; $i <= $totalPages; $i++):
+                    // Always show first, last, and nearby pages
+                    if (
+                        $i == 1 ||
+                        $i == $totalPages ||
+                        ($i >= $page - $visibleRange && $i <= $page + $visibleRange)
+                    ):
+                ?>
+                        <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $i ?>"
+                            class="lg:px-3 lg:py-1 px-4 py-2 rounded <?= $i == $page ? 'bg-indigo-500 text-white' : 'bg-green-600 text-white hover:bg-indigo-500' ?>">
+                            <?= $i ?>
+                        </a>
+                <?php
+                    // Add ellipsis before skipped pages (left)
+                    elseif ($i < $page && !$ellipsisShownLeft):
+                        echo '<span class="px-2 text-gray-500">...</span>';
+                        $ellipsisShownLeft = true;
+
+                    // Add ellipsis after skipped pages (right)
+                    elseif ($i > $page && !$ellipsisShownRight):
+                        echo '<span class="px-2 text-gray-500">...</span>';
+                        $ellipsisShownRight = true;
+                    endif;
+                endfor;
+                ?>
+
+                <!-- Next Button -->
+                <?php if ($page < $totalPages): ?>
+                    <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page + 1 ?>"
+                        class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
+                        Next »
+                    </a>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
 
-        <?php
-        $visibleRange = 2; // show this many pages around current
-        $ellipsisShownLeft = false;
-        $ellipsisShownRight = false;
 
-        for ($i = 1; $i <= $totalPages; $i++):
-            // Always show first, last, and nearby pages
-            if (
-                $i == 1 ||
-                $i == $totalPages ||
-                ($i >= $page - $visibleRange && $i <= $page + $visibleRange)
-            ):
-        ?>
-            <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $i ?>"
-               class="lg:px-3 lg:py-1 px-4 py-2 rounded <?= $i == $page ? 'bg-indigo-500 text-white' : 'bg-green-600 text-white hover:bg-indigo-500' ?>">
-                <?= $i ?>
-            </a>
-        <?php
-            // Add ellipsis before skipped pages (left)
-            elseif ($i < $page && !$ellipsisShownLeft):
-                echo '<span class="px-2 text-gray-500">...</span>';
-                $ellipsisShownLeft = true;
-
-            // Add ellipsis after skipped pages (right)
-            elseif ($i > $page && !$ellipsisShownRight):
-                echo '<span class="px-2 text-gray-500">...</span>';
-                $ellipsisShownRight = true;
-            endif;
-        endfor;
-        ?>
-
-        <!-- Next Button -->
-        <?php if ($page < $totalPages): ?>
-            <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page + 1 ?>"
-               class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
-                Next »
-            </a>
-        <?php endif; ?>
-    </div>
-<?php endif; ?>
-
-  
     </main>
-     <?php
+    <?php
     include 'footer.php'
     ?>
     <script>

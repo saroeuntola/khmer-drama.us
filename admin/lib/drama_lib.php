@@ -11,33 +11,46 @@ class Drama
     }
     public function getAllPaginated($limit, $offset)
     {
-        $stmt = $this->db->prepare("SELECT * FROM dramas ORDER BY id ASC LIMIT :limit OFFSET :offset");
-        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt = $this->db->prepare("
+        SELECT * FROM dramas 
+        ORDER BY created_at DESC 
+        LIMIT :limit OFFSET :offset
+    ");
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public function getLatest($limit = 12)
     {
-        $stmt = $this->db->prepare("SELECT * FROM dramas ORDER BY id ASC LIMIT :limit");
+        $stmt = $this->db->prepare("
+        SELECT * FROM dramas 
+        WHERE status = 0
+        ORDER BY created_at DESC 
+        LIMIT :limit
+    ");
         $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
     public function getAllStatus0($limit = 9)
-{
-    $stmt = $this->db->prepare("
+    {
+        $stmt = $this->db->prepare("
         SELECT d.*, c.name AS category_name, c.slug AS category_slug
         FROM dramas d
         LEFT JOIN categories c ON d.category_id = c.id
         WHERE d.status = 0
-        ORDER BY d.id ASC
+        ORDER BY d.created_at DESC
         LIMIT :limit
     ");
-    $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
 
 
@@ -47,37 +60,39 @@ class Drama
         SELECT d.*, c.name AS category_name, c.slug AS category_slug
         FROM dramas d
         LEFT JOIN categories c ON d.category_id = c.id
-        ORDER BY d.id ASC
+        ORDER BY d.created_at DESC
     ");
         return $stmt->fetchAll();
     }
 
-   public function getByCategorySlug($categorySlug, $limit = null, $offset = 0)
-{
-    $sql = "
+
+    public function getByCategorySlug($categorySlug, $limit = null, $offset = 0)
+    {
+        $sql = "
         SELECT d.*, c.name AS category_name, c.slug AS category_slug
         FROM dramas d
         INNER JOIN categories c ON d.category_id = c.id
         WHERE c.slug = :slug
           AND d.status = 0
-        ORDER BY d.id ASC
+        ORDER BY d.created_at DESC
     ";
 
-    if ($limit !== null) {
-        $sql .= " LIMIT :limit OFFSET :offset";
+        if ($limit !== null) {
+            $sql .= " LIMIT :limit OFFSET :offset";
+        }
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':slug', $categorySlug, PDO::PARAM_STR);
+
+        if ($limit !== null) {
+            $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+            $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    $stmt = $this->db->prepare($sql);
-    $stmt->bindValue(':slug', $categorySlug, PDO::PARAM_STR);
-
-    if ($limit !== null) {
-        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
-        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
-    }
-
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
 
 
     // Get episodes for a drama
@@ -121,12 +136,17 @@ class Drama
 
     public function getPaginated($offset, $limit)
     {
-        $stmt = $this->db->prepare("SELECT * FROM dramas ORDER BY id ASC LIMIT :offset, :limit");
-        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $stmt = $this->db->prepare("
+        SELECT * FROM dramas 
+        ORDER BY created_at DESC 
+        LIMIT :limit OFFSET :offset
+    ");
         $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public function countAll()
     {
@@ -139,15 +159,15 @@ class Drama
         SELECT d.* 
         FROM dramas d
         INNER JOIN categories c ON d.category_id = c.id
-        WHERE c.slug = ?
-        ORDER BY d.id ASC
-        LIMIT :offset, :limit
+        WHERE c.slug = :slug
+        ORDER BY d.created_at DESC
+        LIMIT :limit OFFSET :offset
     ");
-        $stmt->bindValue(1, $slug);
-        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $stmt->bindValue(':slug', $slug, PDO::PARAM_STR);
         $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function countByCategorySlug($slug)
@@ -163,32 +183,31 @@ class Drama
     }
 
 
-  public function getRelated($currentDramaId, $limit = 20)
-{
-    // Fetch the category of current drama
-    $stmt = $this->db->prepare("SELECT category_id FROM dramas WHERE id = :id LIMIT 1");
-    $stmt->execute(['id' => $currentDramaId]);
-    $categoryId = $stmt->fetchColumn();
+    public function getRelated($currentDramaId, $limit = 20)
+    {
+        // Fetch the category of current drama
+        $stmt = $this->db->prepare("SELECT category_id FROM dramas WHERE id = :id LIMIT 1");
+        $stmt->execute(['id' => $currentDramaId]);
+        $categoryId = $stmt->fetchColumn();
 
-    if (!$categoryId) return [];
+        if (!$categoryId) return [];
 
-    // Fetch related dramas in same category (active only)
-    $stmt = $this->db->prepare("
+        // Fetch related dramas in same category (active only), newest first
+        $stmt = $this->db->prepare("
         SELECT * FROM dramas 
         WHERE category_id = :category_id 
           AND id != :current_id 
           AND status = 0
-        ORDER BY RAND()
+        ORDER BY created_at DESC
         LIMIT :limit
     ");
 
-    // Bind parameters
-    $stmt->bindValue(':category_id', $categoryId, PDO::PARAM_INT);
-    $stmt->bindValue(':current_id', $currentDramaId, PDO::PARAM_INT);
-    $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        // Bind parameters
+        $stmt->bindValue(':category_id', $categoryId, PDO::PARAM_INT);
+        $stmt->bindValue(':current_id', $currentDramaId, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
 
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
