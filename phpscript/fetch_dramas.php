@@ -1,12 +1,9 @@
 <?php
+include '../admin/lib/db.php';
 // ---------------------------
 // Database connection
 // ---------------------------
-$pdo = new PDO("mysql:host=localhost;dbname=drama_db;charset=utf8mb4", "root", "", [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-]);
-
+$pdo = dbConn();
 // ---------------------------
 // Helper functions
 // ---------------------------
@@ -26,8 +23,10 @@ function wp_get_json($url)
     return $res ? json_decode($res, true) : false;
 }
 
-function download_image($url, $saveDir = 'images/')
+function download_image($url)
 {
+
+    $saveDir = dirname(__DIR__) . '/images/';
     if (!is_dir($saveDir)) mkdir($saveDir, 0755, true);
 
     $ext = pathinfo(parse_url($url, PHP_URL_PATH), PATHINFO_EXTENSION);
@@ -64,7 +63,7 @@ function download_image($url, $saveDir = 'images/')
 // Fetch latest dramas
 // ---------------------------
 echo "Fetching latest dramas...\n";
-$posts = wp_get_json("https://movie-khmer.com/wp-json/wp/v2/posts?per_page=50&page=1");
+$posts = wp_get_json("https://movie-khmer.com/wp-json/wp/v2/posts?per_page=100&page=1");
 
 if (!$posts) {
     die("❌ Failed to fetch posts!\n");
@@ -86,7 +85,7 @@ foreach ($posts as $post) {
             $img_url = $media['source_url'];
 
             // Download image
-            $saveDir = __DIR__ . '../images/';
+            $saveDir = dirname(__DIR__) . '/images/';
             if (!is_dir($saveDir)) mkdir($saveDir, 0755, true);
 
             $ext = pathinfo(parse_url($img_url, PHP_URL_PATH), PATHINFO_EXTENSION);
