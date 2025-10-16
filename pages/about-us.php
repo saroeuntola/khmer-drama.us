@@ -40,7 +40,7 @@
     <link rel="icon" href="../images/logo.png" type="image/png">
 
     <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="../src/output.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
 <script>

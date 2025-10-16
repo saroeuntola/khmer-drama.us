@@ -106,7 +106,8 @@ $totalPages = ceil($total / $limit);
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://khmer-drama.org/pages/drama">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../src/output.css">
+ 
     <!-- Favicon -->
     <link rel="icon" href="../images/logo.png" type="image/png">
 

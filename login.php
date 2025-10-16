@@ -33,8 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="../src/output.css">
 </head>
 
 <body class="gradient-bg relative overflow-hidden">
@@ -77,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <input type="checkbox" id="remember" name="remember" class="checkbox-custom mr-2">
                             Remember me
                         </label>
-                      
+
                     </div>
 
                     <!-- Submit Button -->
