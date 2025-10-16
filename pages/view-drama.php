@@ -247,7 +247,7 @@ if ($slug) {
                         <?php if (!empty($rDrama['featured_img'])): ?>
                             <img src="/<?= htmlspecialchars($rDrama['featured_img']) ?>"
                                 alt="<?= htmlspecialchars($rDrama['title']) ?>"
-                                class="w-full h-48">
+                                class="w-full h-48" loading="lazy">
                         <?php endif; ?>
                         <div class="p-2">
                             <h3 class="text-white font-semibold text-sm line-clamp-2">

@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
     <link rel="icon" href="/images/logo.png" type="image/png">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
     <script>
@@ -90,6 +90,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <?php include "loading.php" ?>
     <header>
         <?php
         include "./pages/navbar.php"

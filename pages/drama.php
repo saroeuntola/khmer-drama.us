@@ -194,7 +194,7 @@ $totalPages = ceil($total / $limit);
                     <div class="drama-card bg-gray-700 rounded-lg shadow hover:shadow-lg transition overflow-hidden">
                         <a href="/pages/view-drama?title=<?= htmlspecialchars($drama['slug']) ?>">
                             <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
-                                alt="<?= htmlspecialchars($drama['title']) ?>" class="w-full h-48">
+                                alt="<?= htmlspecialchars($drama['title']) ?>" class="w-full h-48" loading="lazy">
                             <div class="p-3">
                                 <h3 class=" font-semibold text-white"><?= htmlspecialchars($drama['title']) ?></h3>
                             </div>

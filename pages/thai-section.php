@@ -26,7 +26,7 @@ $chinaDramas = array_slice($chinaDramas, 0, 9);
                         <a href="/pages/view-drama?title=<?= htmlspecialchars($drama['slug']) ?>">
                             <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
                                 alt="<?= htmlspecialchars($drama['title']) ?>"
-                                class="w-full h-40 rounded-lg">
+                                class="w-full h-40 rounded-lg" loading="lazy">
                             <h3 class="text-sm font-semibold p-2 text-white">
                                 <?= htmlspecialchars($drama['title']) ?>
                             </h3>
@@ -42,7 +42,7 @@ $chinaDramas = array_slice($chinaDramas, 0, 9);
                         <a href="/pages/view-drama?title=<?= htmlspecialchars($drama['slug']) ?>">
                             <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
                                 alt="<?= htmlspecialchars($drama['title']) ?>"
-                                class="w-full h-48 rounded-lg">
+                                class="w-full h-48 rounded-lg" loading="lazy">
                             <h3 class="font-semibold text-white p-2">
                                 <?= htmlspecialchars($drama['title']) ?>
                             </h3>

@@ -22,7 +22,7 @@
                     src="../assets/img/fb.png"
                     alt="Facebook logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
 
                 <!-- Telegram -->
                 <img
@@ -30,14 +30,14 @@
                     alt="Telegram logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
                     title="Telegram"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
 
                 <!-- LinkedIn -->
                 <img
                     src="../assets/img/linkedin.svg"
                     alt="linkedin logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" />
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
 
 
             </div>
