@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
-    <title>Khmer Drama - Asian Drama Dubbed in Khmer | Chinese, Korean, Thai & Khmer Series</title>
+    <title>Asian Drama Dubbed in Khmer | Chinese drama speak khmer, Korean drama speak khmer, Thai & Khmer Series</title>
 
     <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese, Korean, Thai, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
-    <meta name="keywords" content="Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
+    <meta name="keywords" content="Chinese drama speak khmer, Korean drama speak khmer, Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
 
     <meta name="author" content="Drama Dubbed Khmer">
     <meta name="robots" content="index, follow">
