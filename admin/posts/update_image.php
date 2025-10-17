@@ -8,9 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['featured_img'])) {
     $file = $_FILES['featured_img'];
 
     $uploadDir = __DIR__ . '/../../images/';
-    $originalName = basename($file['name']);
-    $targetFile = $uploadDir . $originalName;
-    $dbPath = 'images/' . $originalName; // Path to store in DB
+
+    // Make sure upload folder exists
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+
+    // Generate a unique filename to avoid conflicts
+    $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $uniqueName = uniqid('drama_') . '.' . ($ext ?: 'jpg');
+    $targetFile = $uploadDir . $uniqueName;
+    $dbPath = 'images/' . $uniqueName; // Path to store in DB
 
     $dramaObj = new Drama();
 
@@ -19,17 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['featured_img'])) {
     $stmt->execute([$dramaId]);
     $oldImage = $stmt->fetchColumn();
 
-    // Delete old image if exists and different from new
-    if ($oldImage && file_exists('../' . $oldImage) && $oldImage !== $dbPath) {
-        unlink('../' . $oldImage);
+    // Delete old image if exists
+    if ($oldImage && file_exists(__DIR__ . '/../../' . $oldImage)) {
+        unlink(__DIR__ . '/../../' . $oldImage);
     }
 
-    // Move uploaded file (will overwrite if name exists)
+    // Move uploaded file
     if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-        $dramaObj->updateImage($dramaId, $dbPath); // Store path in DB
+        // Update DB with new image path
+        $dramaObj->updateImage($dramaId, $dbPath);
         header('Location: ./');
         exit;
     } else {
-        echo "Failed to upload image.";
+        echo "⚠️ Failed to upload image.";
     }
 }

@@ -63,7 +63,7 @@ function download_image($url)
 // Fetch latest dramas
 // ---------------------------
 echo "Fetching latest dramas...\n";
-$posts = wp_get_json("https://movie-khmer.com/wp-json/wp/v2/posts?per_page=100&page=1");
+$posts = wp_get_json("https://movie-khmer.com/wp-json/wp/v2/posts?per_page=50&page=1");
 
 if (!$posts) {
     die("❌ Failed to fetch posts!\n");
