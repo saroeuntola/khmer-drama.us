@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
     <title>Asian Drama Dubbed in Khmer | Chinese drama speak khmer, Korean drama speak khmer, Thai & Khmer Series</title>
 
-    <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese, Korean, Thai, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
+    <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese Drama, Korean Drama, Thai Drama, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
     <meta name="keywords" content="Chinese drama speak khmer, Korean drama speak khmer, Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
 
     <meta name="author" content="Drama Dubbed Khmer">
@@ -63,15 +63,24 @@
         })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
-
     <!-- Schema Markup (SEO JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Drama Dubbed Khmer",
+            "url": "https://khmer-drama.org/",
+            "logo": "https://khmer-drama.org/images/logo.png"
+        }
+    </script>
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Drama Dubbed Khmer",
             "url": "https://khmer-drama.org/",
-            "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai & Khmer dramas with HD episodes and Khmer voice.",
+            "description": "Watch Asian dramas dubbed in Khmer: Chinese Drama, Korean Drama, Thai Drama & Khmer dramas with HD episodes and speak khmer.",
             "publisher": {
                 "@type": "Organization",
                 "name": "Drama Dubbed Khmer",
@@ -82,6 +91,7 @@
             }
         }
     </script>
+
 </head>
 
 
