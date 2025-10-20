@@ -31,7 +31,7 @@
     <link rel="canonical" href="https://khmer-drama.org/">
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
-    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="icon" href="https://khmer-drama.org/images/logo.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
@@ -63,6 +63,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
+     
     <!-- Schema Markup (SEO JSON-LD) -->
     <script type="application/ld+json">
         {
@@ -70,7 +71,8 @@
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
             "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/images/logo.png"
+            "logo": "https://khmer-drama.org/images/logo.png",
+
         }
     </script>
 
@@ -80,7 +82,11 @@
             "@type": "WebSite",
             "name": "Drama Dubbed Khmer",
             "url": "https://khmer-drama.org/",
-            "description": "Watch Asian dramas dubbed in Khmer: Chinese Drama, Korean Drama, Thai Drama & Khmer dramas with HD episodes and speak khmer.",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://khmer-drama.org/search?query={search_term_string}",
+                "query-input": "required name=search_term_string"
+            },
             "publisher": {
                 "@type": "Organization",
                 "name": "Drama Dubbed Khmer",
@@ -88,11 +94,14 @@
                     "@type": "ImageObject",
                     "url": "https://khmer-drama.org/images/logo.png"
                 }
-            }
+            },
+            "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai dramas & Khmer-dubbed series in HD."
         }
     </script>
 
+
 </head>
+
 <body class="bg-gray-900 text-white">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
