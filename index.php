@@ -17,7 +17,7 @@
     <!-- Open Graph (Facebook, Telegram, etc.) -->
     <meta property="og:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
     <meta property="og:description" content="Watch Chinese, Korean, Thai, and Khmer dramas dubbed in Khmer language. Updated daily with HD episodes.">
-    <meta property="og:image" content="https://khmer-drama.org/images/logo.png">
+    <meta property="og:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
     <meta property="og:url" content="https://khmer-drama.org/">
     <meta property="og:type" content="website">
 
@@ -31,7 +31,13 @@
     <link rel="canonical" href="https://khmer-drama.org/">
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
-    <link rel="icon" href="https://khmer-drama.org/images/logo.png" type="image/png">
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg"/>
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Asain Drama" />
+    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
@@ -63,7 +69,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
-     
+
     <!-- Schema Markup (SEO JSON-LD) -->
     <script type="application/ld+json">
         {
@@ -71,7 +77,7 @@
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
             "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/images/logo.png",
+            "logo": "https://khmer-drama.org/assets/icons/favicon.svg",
 
         }
     </script>
@@ -92,7 +98,7 @@
                 "name": "Drama Dubbed Khmer",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://khmer-drama.org/images/logo.png"
+                    "url": "https://khmer-drama.org/assets/icons/favicon.svg"
                 }
             },
             "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai dramas & Khmer-dubbed series in HD."
