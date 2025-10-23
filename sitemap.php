@@ -18,6 +18,27 @@ $staticPages = [
         'priority' => '1.0'
     ],
     [
+        'loc' => 'https://khmer-drama.org/assets/icons/favicon-96x96.png',
+        'changefreq' => 'weekly',
+        'priority' => '1'
+    ],
+    [
+        'loc' => 'https://khmer-drama.org/assets/icons/favicon.svg',
+        'changefreq' => 'weekly',
+        'priority' => '1'
+    ],
+    [
+        'loc' => 'https://khmer-drama.org/assets/icons/favicon.ico',
+        'changefreq' => 'weekly',
+        'priority' => '1'
+    ],
+    [
+        'loc' => 'https://khmer-drama.org/assets/icons/apple-touch-icon.png',
+        'changefreq' => 'weekly',
+        'priority' => '1'
+    ],
+    [
+    
         'loc' => 'https://khmer-drama.org/pages/privacy-policy',
         'changefreq' => 'weekly',
         'priority' => '0.8'
