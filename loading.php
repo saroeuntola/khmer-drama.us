@@ -44,8 +44,8 @@
     aria-live="polite">
     <div class="relative h-20 w-20 flex items-center justify-center">
       <div class="loader"></div>
-      <img src="./images/logo.png" alt="Logo"
-        class="absolute right-5 h-8 w-8 object-contain pointer-events-none" />
+      <!-- <img src="./images/logo.png" alt="Logo"
+        class="absolute right-5 h-8 w-8 object-contain pointer-events-none" /> -->
     </div>
   </div>
 
