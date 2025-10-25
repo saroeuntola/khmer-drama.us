@@ -28,11 +28,11 @@
     <meta name="twitter:image" content="https://khmer-drama.org/images/khmer-drama-cover.jpg">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://khmer-drama.org/">
+    <link rel="canonical" href="https://khmer-drama.org">
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg"/>
     <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />

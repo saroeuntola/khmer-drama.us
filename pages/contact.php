@@ -7,10 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Drama Dubbed Khmer</title>
     <link rel="stylesheet" href="../src/output.css">
+  
     <!-- Favicon -->
-    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/web-app-manifest-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/icons/web-app-manifest-512x512.png" />
+    <meta name="apple-mobile-web-app-title" content="Asain Drama" />
+    <link rel="manifest" href="/assets/icons/site.webmanifest" /> 
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Drama Dubbed Khmer",
+            "url": "https://khmer-drama.org/",
+            "logo": "https://khmer-drama.org/assets/icons/favicon.svg"
+        }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
+   
     <script>
         window.dataLayer = window.dataLayer || [];
 
