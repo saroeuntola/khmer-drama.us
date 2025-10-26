@@ -150,6 +150,42 @@ if ($slug) {
         scrollbar-width: thin;
         scrollbar-color: #16b24dff #1f2937;
     }
+
+    /* HTML: <div class="loader"></div> */
+    .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        display: grid;
+        -webkit-mask: conic-gradient(from 15deg, #0000, #000);
+        animation: l26 1s infinite steps(12);
+    }
+
+    .loader,
+    .loader:before,
+    .loader:after {
+        background:
+            radial-gradient(closest-side at 50% 12.5%,
+                #f03355 96%, #0000) 50% 0/20% 80% repeat-y,
+            radial-gradient(closest-side at 12.5% 50%,
+                #f03355 96%, #0000) 0 50%/80% 20% repeat-x;
+    }
+
+    .loader:before,
+    .loader:after {
+        content: "";
+        grid-area: 1/1;
+        transform: rotate(30deg);
+    }
+
+    .loader:after {
+        transform: rotate(60deg);
+    }
+
+    @keyframes l26 {
+        100% {
+            transform: rotate(1turn)
+        }
+    }
 </style>
 
 <body class="bg-gray-900 text-white">
@@ -168,14 +204,21 @@ if ($slug) {
 
         <?php if ($drama): ?>
             <!-- Main Video Player -->
-            <div class="aspect-video mb-4">
+            <div class="aspect-video mb-4 relative">
                 <?php if (!empty($episodes)): ?>
+                    <!-- Loading Spinner -->
+                    <div id="iframe-loader" class="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg z-10">
+                        <div class="loader"></div>
+                    </div>
+
+                    <!-- Video iframe -->
                     <iframe
                         id="main-player"
                         src="<?= htmlspecialchars($episodes[0]['video_url']) ?>"
                         frameborder="0"
                         allowfullscreen
-                        class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg">
+                        class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg"
+                        onload="hideIframeLoader()">
                     </iframe>
                 <?php else: ?>
                     <div class="flex items-center justify-center w-full h-[250px] md:h-[420px] lg:h-[520px] bg-gray-800 rounded-lg text-gray-400">
@@ -183,6 +226,14 @@ if ($slug) {
                     </div>
                 <?php endif; ?>
             </div>
+
+            <script>
+                function hideIframeLoader() {
+                    const loader = document.getElementById('iframe-loader');
+                    if (loader) loader.style.display = 'none';
+                }
+            </script>
+
 
             <?php if (!empty($episodes)): ?>
                 <!-- Episode Buttons -->
@@ -277,31 +328,10 @@ if ($slug) {
     ?>
 </body>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const buttons = document.querySelectorAll(".ep-btn");
-        const player = document.getElementById("main-player");
-
-        buttons.forEach(button => {
-            button.addEventListener("click", function() {
-                const videoUrl = this.getAttribute("data-video");
-                if (player && videoUrl) {
-                    player.src = videoUrl;
-
-                    // Reset active button style
-                    buttons.forEach(btn => btn.classList.remove("bg-green-500"));
-                    buttons.forEach(btn => btn.classList.add("bg-indigo-500"));
-                    buttons.forEach(btn => btn.classList.remove("hover:bg-indigo-800"));
-
-                    // Highlight the active episode
-                    this.classList.remove("bg-indigo-500");
-                    this.classList.add("bg-green-500");
-                }
-            });
-        });
-    });
-</script>
-
+<?php
+$js = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/assets/js/ep.js');
+$encoded = base64_encode($js);
+echo '<script src="data:text/javascript;base64,' . $encoded . '" defer></script>';
+?>
 
 </html>

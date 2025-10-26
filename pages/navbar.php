@@ -111,7 +111,7 @@
 </div>
 
 <?php
-$js = file_get_contents('./assets/js/navbar.js');
+$js = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/assets/js/navbar.js');
 $encoded = base64_encode($js);
 echo '<script src="data:text/javascript;base64,' . $encoded . '" defer></script>';
 ?>

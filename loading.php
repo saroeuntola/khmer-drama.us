@@ -1,39 +1,67 @@
 <style>
+  /* Custom scrollbar for episode list */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    /* Scrollbar width */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1f2937;
+    /* Tailwind gray-800 */
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #16b24dff;
+    /* Tailwind blue-600 */
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #16b24dff;
+    /* Tailwind blue-500 */
+  }
+
+  /* For Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #16b24dff #1f2937;
+  }
+
+  /* HTML: <div class="loader"></div> */
   .loader {
     width: 50px;
     aspect-ratio: 1;
-    --c: no-repeat radial-gradient(farthest-side, #514b82 92%, #0000);
+    display: grid;
+    -webkit-mask: conic-gradient(from 15deg, #0000, #000);
+    animation: l26 1s infinite steps(12);
+  }
+
+  .loader,
+  .loader:before,
+  .loader:after {
     background:
-      var(--c) 50% 0,
-      var(--c) 50% 100%,
-      var(--c) 100% 50%,
-      var(--c) 0 50%;
-    background-size: 10px 10px;
-    animation: l18 1s infinite linear;
-    position: relative;
+      radial-gradient(closest-side at 50% 12.5%,
+        #f03355 96%, #0000) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%,
+        #f03355 96%, #0000) 0 50%/80% 20% repeat-x;
   }
 
-  .loader::before {
+  .loader:before,
+  .loader:after {
     content: "";
-    position: absolute;
-    inset: 0;
-    margin: 3px;
-    background: repeating-conic-gradient(#0000 0 35deg, #514b82 0 90deg);
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 0);
-    border-radius: 50%;
+    grid-area: 1/1;
+    transform: rotate(30deg);
   }
 
-  @keyframes l18 {
+  .loader:after {
+    transform: rotate(60deg);
+  }
+
+  @keyframes l26 {
     100% {
-      transform: rotate(.5turn)
+      transform: rotate(1turn)
     }
-  }
-
-  /* Centering fix */
-  #pageLoader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 </style>
 
@@ -44,8 +72,6 @@
     aria-live="polite">
     <div class="relative h-20 w-20 flex items-center justify-center">
       <div class="loader"></div>
-      <!-- <img src="./images/logo.png" alt="Logo"
-        class="absolute right-5 h-8 w-8 object-contain pointer-events-none" /> -->
     </div>
   </div>
 
