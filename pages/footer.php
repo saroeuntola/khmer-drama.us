@@ -2,7 +2,9 @@
     <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
         <!-- Logo / Site Name -->
         <div class="mb-4 md:mb-0 text-center md:text-left">
-            <h2 class="text-2xl font-bold text-indigo-500">Drama Dubbed Khmer</h2>
+            <a href="/" class=" text-xl font-bold text-white hover:opacity-70 transition-all">
+                <img src="/assets/img/logo.png" class="logo w-[110px]" alt="drama dubbed khmer logo" />
+            </a>
             <p class="text-gray-400 text-sm mt-1">Khmer-dubbed Asian dramas from China, Korea, Thailand, Cambodia & more.</p>
         </div>
 
@@ -22,7 +24,7 @@
                     src="../assets/img/fb.png"
                     alt="Facebook logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy" />
 
                 <!-- Telegram -->
                 <img
@@ -30,14 +32,14 @@
                     alt="Telegram logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
                     title="Telegram"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy" />
 
                 <!-- LinkedIn -->
                 <img
                     src="../assets/img/linkedin.svg"
                     alt="linkedin logo"
                     class="w-8 h-8 cursor-pointer hover:opacity-70 transition-opacity duration-200"
-                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy"/>
+                    onclick="window.open('https://t.me/Saroeun_Tola', '_blank')" loading="lazy" />
 
 
             </div>

@@ -3,6 +3,11 @@
     #logo {
         width: 100px;
     }
+    @media (min-width: 1024px) {
+        .logo {
+            width: 250px;
+        }
+    }
 </style>
 
 <nav id="header" class="bg-indigo-500 shadow-md w-full fixed top-0 left-0 z-50">
@@ -25,15 +30,15 @@
                 </button>
 
                 <!-- Logo -->
-                <a href="#" class="ml-3 text-xl font-bold text-white hover:opacity-70 transition-all">
-                   Drama Dubbed Khmer
+                <a href="/" class=" text-xl font-bold text-white hover:opacity-70 transition-all">
+                    <img src="/assets/img/logo.png" class="w-[110px]" alt="drama dubbed khmer logo" />
                 </a>
             </div>
             <!-- Desktop: Logo + Menu -->
             <div class="hidden lg:flex justify-between items-center w-full">
                 <!-- Logo -->
-                <a href="/" class="text-2xl font-bold text-white hover:opacity-70 transition-all">
-                    Drama Dubbed Khmer
+                <a href="/" class="text-xl font-bold text-white hover:opacity-70 transition-all">
+                    <img src="/assets/img/logo.png" class="logo" alt="drama dubbed khmer logo"/>
                 </a>
 
                 <!-- Menu Items -->
@@ -200,32 +205,32 @@
                     searchResults.innerHTML = '<div class="text-white col-span-full">No results found</div>';
                 } else {
                     data.forEach(item => {
-    const a = document.createElement('a');
-    a.href = `/pages/view-drama?title=${item.slug}`;
-    a.className = `
+                        const a = document.createElement('a');
+                        a.href = `/pages/view-drama?title=${item.slug}`;
+                        a.className = `
         flex items-center gap-3 bg-gray-800 text-white p-3 rounded-lg 
         hover:bg-gray-700 transition duration-200 shadow-md hover:shadow-lg
     `;
 
-    // Image (if available)
-    const img = document.createElement('img');
-    img.src = item.featured_img ? `/${item.featured_img}` : '/assets/no-image.jpg'; 
-    img.alt = item.title;
-    img.className = 'w-30 h-20 rounded-md flex-shrink-0';
+                        // Image (if available)
+                        const img = document.createElement('img');
+                        img.src = item.featured_img ? `/${item.featured_img}` : '/assets/no-image.jpg';
+                        img.alt = item.title;
+                        img.className = 'w-30 h-20 rounded-md flex-shrink-0';
 
-    // Text Container
-    const textDiv = document.createElement('div');
-    const title = document.createElement('h3');
-    title.textContent = item.title;
-    title.className = 'font-semibold text-sm';
-    textDiv.appendChild(title);
+                        // Text Container
+                        const textDiv = document.createElement('div');
+                        const title = document.createElement('h3');
+                        title.textContent = item.title;
+                        title.className = 'font-semibold text-sm';
+                        textDiv.appendChild(title);
 
-    // Assemble card
-    a.appendChild(img);
-    a.appendChild(textDiv);
+                        // Assemble card
+                        a.appendChild(img);
+                        a.appendChild(textDiv);
 
-    searchResults.appendChild(a);
-});
+                        searchResults.appendChild(a);
+                    });
                 }
             })
             .catch(err => {
