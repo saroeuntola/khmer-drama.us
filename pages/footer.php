@@ -46,8 +46,8 @@
     </div>
 
     <!-- Copyright -->
-    <div class="max-w-5xl mx-auto px-6 py-4 border-t border-gray-700 text-center text-gray-500 text-sm">
+    <div class="max-w-5xl mx-auto px-6 py-4 border-t border-gray-700 text-center text-gray-300 text-sm">
         &copy; 2025 <span class="font-semibold">Drama Dubbed Khmer</span>. All rights reserved. <br> <br>
-        <strong>All videos are linked from external sources. We do not own any of the content. If any documents violate the law or your copyright, please let us know, and we will remove it promptly</strong>
+        All videos are linked from external sources. We do not own any of the content. If any documents violate the law or your copyright, please let us know, and we will remove it promptly
     </div>
 </footer>

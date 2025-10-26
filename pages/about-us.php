@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="About Us - Drama Dubbed Khmer">
     <meta name="twitter:description" content="Learn more about Drama Dubbed Khmer, our mission, team, and values.">
     <meta name="twitter:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
-    
+
     <link rel="canonical" href="https://khmer-drama.org/pages/about-us">
 
     <!-- Favicon -->
@@ -101,7 +101,7 @@
         </p>
 
         <p class="mb-6 text-lg leading-relaxed">
-            By using this website, you acknowledge that all content is provided for <span class="font-semibold">educational and entertainment purposes only</span>. We are not responsible for the legality, accuracy, or quality of external content. Our role is solely to provide links to content hosted elsewhere for the convenience of our visitors. If you are a content owner and believe any video or document linked on our site infringes your copyright, please contact us immediately at <a href="mailto:saroeuntola123@gmail.com" class="text-indigo-400 underline">Email</a>, and we will remove the content promptly.
+            By using this website, you acknowledge that all content is provided for <span class="font-semibold">educational and entertainment purposes only</span>. We are not responsible for the legality, accuracy, or quality of external content. Our role is solely to provide links to content hosted elsewhere for the convenience of our visitors. If you are a content owner and believe any video or document linked on our site infringes your copyright, please contact us immediately at <a href="mailto:info@khmer-drama.org" class="text-indigo-400 underline">info@khmer-drama.org</a>, and we will remove the content promptly.
         </p>
 
         <p class="mb-6 text-lg leading-relaxed">
