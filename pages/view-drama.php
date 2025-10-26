@@ -217,23 +217,15 @@ if ($slug) {
                         src="<?= htmlspecialchars($episodes[0]['video_url']) ?>"
                         frameborder="0"
                         allowfullscreen
-                        class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg"
-                        onload="hideIframeLoader()">
+                        class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg">
                     </iframe>
+
                 <?php else: ?>
                     <div class="flex items-center justify-center w-full h-[250px] md:h-[420px] lg:h-[520px] bg-gray-800 rounded-lg text-gray-400">
                         No episodes available for this drama.
                     </div>
                 <?php endif; ?>
             </div>
-
-            <script>
-                function hideIframeLoader() {
-                    const loader = document.getElementById('iframe-loader');
-                    if (loader) loader.style.display = 'none';
-                }
-            </script>
-
 
             <?php if (!empty($episodes)): ?>
                 <!-- Episode Buttons -->
@@ -333,5 +325,14 @@ $js = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/assets/js/ep.js');
 $encoded = base64_encode($js);
 echo '<script src="data:text/javascript;base64,' . $encoded . '" defer></script>';
 ?>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const iframe = document.getElementById('main-player');
+        const loader = document.getElementById('iframe-loader');
 
+        iframe.addEventListener('load', () => {
+            if (loader) loader.style.display = 'none';
+        });
+    });
+</script>
 </html>
