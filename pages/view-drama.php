@@ -333,6 +333,13 @@ echo '<script src="data:text/javascript;base64,' . $encoded . '" defer></script>
         iframe.addEventListener('load', () => {
             if (loader) loader.style.display = 'none';
         });
+
+        setTimeout(() => {
+            if (loader && loader.style.display !== 'none') {
+                loader.style.display = 'none';
+            }
+        }, 5000);
     });
 </script>
+
 </html>
