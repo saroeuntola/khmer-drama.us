@@ -216,9 +216,11 @@ if ($slug) {
                         id="main-player"
                         src="<?= htmlspecialchars($episodes[0]['video_url']) ?>"
                         frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; screen-wake-lock"
                         allowfullscreen
                         class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg">
                     </iframe>
+
 
                 <?php else: ?>
                     <div class="flex items-center justify-center w-full h-[250px] md:h-[420px] lg:h-[520px] bg-gray-800 rounded-lg text-gray-400">
@@ -338,7 +340,7 @@ echo '<script src="data:text/javascript;base64,' . $encoded . '" defer></script>
             if (loader && loader.style.display !== 'none') {
                 loader.style.display = 'none';
             }
-        }, 5000);
+        }, 3000);
     });
 </script>
 
