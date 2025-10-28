@@ -15,8 +15,7 @@ if ($slug) {
     if ($drama) {
         $episodes = $dramaObj->getEpisodes($drama['id']);
 
-        // Fetch related dramas (exclude current drama)
-        $allRelated = $dramaObj->getRelated($drama['id']); // returns array of dramas
+        $allRelated = $dramaObj->getRelated($drama['id']);
         $totalItems = count($allRelated);
         $totalPages = ceil($totalItems / $perPage);
 
@@ -28,7 +27,7 @@ if ($slug) {
 
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +89,7 @@ if ($slug) {
             w[l].push({
                 'gtm.start': new Date().getTime(),
                 event: 'gtm.js'
-            });
+            }); 
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
                 dl = l != 'dataLayer' ? '&l=' + l : '';
