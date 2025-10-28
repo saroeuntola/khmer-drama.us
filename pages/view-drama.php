@@ -27,7 +27,7 @@ if ($slug) {
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@ if ($slug) {
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="<?= htmlspecialchars($drama['title'] ?? 'Drama') ?> - Watch Full Episodes Dubbed in Khmer">
     <meta property="og:description" content="<?= htmlspecialchars($drama['title'] . ' Watch full episodes of Khmer and Asian dramas, including Chinese, Korean, Thai & Khmer series, dubbed in Khmer.') ?>">
-    <meta property="og:image" content="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://yourdomain.com/images/default-drama.jpg') ?>">
+    <meta property="og:image" content="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? '') ?>">
     <meta property="og:url" content="<?= 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
     <meta property="og:type" content="video.movie">
 
@@ -58,13 +58,13 @@ if ($slug) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= htmlspecialchars($drama['title'] ?? 'Drama') ?> - Watch Full Episodes Dubbed in Khmer">
     <meta name="twitter:description" content="<?= htmlspecialchars($drama['title'] . ' Watch full episodes of Khmer and Asian dramas, including Chinese, Korean, Thai & Khmer series, dubbed in Khmer.') ?>">
-    <meta name="twitter:image" content="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://yourdomain.com/images/default-drama.jpg') ?>">
+    <meta name="twitter:image" content="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? '') ?>">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://khmer-drama.org/images/logo.png') ?>" type="image/png">
+    <link rel="icon" href="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://khmer-drama.org/assets/icons/favicon.svg') ?>" type="image/png">
 
     <!-- TailwindCSS -->
     <link rel="stylesheet" href="../src/output.css">
@@ -89,7 +89,7 @@ if ($slug) {
             w[l].push({
                 'gtm.start': new Date().getTime(),
                 event: 'gtm.js'
-            }); 
+            });
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
                 dl = l != 'dataLayer' ? '&l=' + l : '';
@@ -100,25 +100,58 @@ if ($slug) {
         })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
-    <!-- Schema Markup (JSON-LD for Video/Drama) -->
+
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "name": "<?= htmlspecialchars($drama['title'] ?? 'Drama') ?>",
-            "description": "<?= htmlspecialchars($drama['description'] ?? 'Watch full episodes of Khmer and Asian dramas dubbed in Khmer.') ?>",
-            "thumbnailUrl": "https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://yourdomain.com/images/default-drama.jpg') ?>",
-            "contentUrl": "<?= htmlspecialchars($drama['video_url'] ?? 'https://yourdomain.com/videos/default.mp4') ?>",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Drama Dubbed Khmer",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://khmer-drama.org/images/logo.png"
-                }
-            }
+        <?php
+        $structuredData = [
+            "@context" => "https://schema.org",
+            "@type" => "TVSeries",
+            "name" => $drama['title'] ?? 'Drama',
+            "description" => $drama['description'] ?? 'Watch full episodes of Khmer and Asian dramas dubbed in Khmer.',
+            "thumbnailUrl" => !empty($drama['featured_img']) ? "https://khmer-drama.org/" . $drama['featured_img'] : "https://khmer-drama.org/assets/icons/favicon-96x96.png",
+            "publisher" => [
+                "@type" => "Organization",
+                "name" => "Drama Dubbed Khmer",
+                "logo" => [
+                    "@type" => "ImageObject",
+                    "url" => "/assets/icons/favicon-96x96.png"
+                ]
+            ],
+            "episode" => []
+        ];
+
+        foreach ($episodes as $index => $ep) {
+            if (empty($ep['video_url'])) continue;
+
+            $structuredData['episode'][] = [
+                "@type" => "VideoObject",
+                "name" => $ep['title'] ?? ($drama['title'] . " Episode " . ($index + 1)),
+                "description" => $ep['description'] ?? ($drama['description'] ?? 'Watch full episodes of Khmer and Asian dramas dubbed in Khmer.'),
+                "thumbnailUrl" => !empty($ep['featured_img']) ? "https://khmer-drama.org/" . $ep['featured_img'] : (!empty($drama['featured_img']) ? "https://khmer-drama.org/" . $drama['featured_img'] : "https://khmer-drama.org/assets/icons/favicon-96x96.png"),
+                "contentUrl" => $ep['video_url'], // direct video file
+                "embedUrl" => $ep['video_url'],   // video iframe
+                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug']) . "&ep=" . urlencode($ep['ep_number']) // page URL users click to watch
+            ];
         }
+
+        if (empty($structuredData['episode'])) {
+            $structuredData['episode'][] = [
+                "@type" => "VideoObject",
+                "name" => $drama['title'] ?? 'Drama',
+                "description" => $drama['description'] ?? 'Watch full episodes of Khmer and Asian dramas dubbed in Khmer.',
+                "thumbnailUrl" => !empty($drama['featured_img']) ? "https://khmer-drama.org/" . $drama['featured_img'] : "https://khmer-drama.org/assets/icons/favicon-96x96.png",
+                "contentUrl" => "",
+                "embedUrl" => "",
+                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug'])
+            ];
+        }
+
+        echo json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        ?>
     </script>
+
+
+
 </head>
 <style>
     /* Custom scrollbar for episode list */
@@ -215,7 +248,7 @@ if ($slug) {
                         id="main-player"
                         src="<?= htmlspecialchars($episodes[0]['video_url']) ?>"
                         frameborder="0"
-                        allow="autoplay; fullscreen; picture-in-picture; screen-wake-lock"
+                        allow="autoplay; fullscreen; picture-in-picture"
                         allowfullscreen
                         class="w-full h-[250px] md:h-[420px] lg:h-[520px] rounded-lg shadow-lg">
                     </iframe>
