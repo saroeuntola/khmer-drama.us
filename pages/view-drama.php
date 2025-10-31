@@ -128,9 +128,10 @@ if ($slug) {
                 "name" => $ep['title'] ?? ($drama['title'] . " Episode " . ($index + 1)),
                 "description" => $ep['description'] ?? ($drama['description'] ?? 'Watch full episodes of Khmer and Asian dramas dubbed in Khmer.'),
                 "thumbnailUrl" => !empty($ep['featured_img']) ? "https://khmer-drama.org/" . $ep['featured_img'] : (!empty($drama['featured_img']) ? "https://khmer-drama.org/" . $drama['featured_img'] : "https://khmer-drama.org/assets/icons/favicon-96x96.png"),
-                "contentUrl" => $ep['video_url'], // direct video file
-                "embedUrl" => $ep['video_url'],   // video iframe
-                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug']) . "&ep=" . urlencode($ep['ep_number']) // page URL users click to watch
+                "contentUrl" => $ep['video_url'],
+                "embedUrl" => $ep['video_url'],
+                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug']) . "&ep=" . urlencode($ep['ep_number']),
+                "uploadDate" => !empty($ep['created_at']) ? date('Y-m-d', strtotime($ep['created_at'])) : date('Y-m-d')
             ];
         }
 
@@ -142,13 +143,15 @@ if ($slug) {
                 "thumbnailUrl" => !empty($drama['featured_img']) ? "https://khmer-drama.org/" . $drama['featured_img'] : "https://khmer-drama.org/assets/icons/favicon-96x96.png",
                 "contentUrl" => "",
                 "embedUrl" => "",
-                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug'])
+                "url" => "https://khmer-drama.org/pages/view-drama?title=" . urlencode($drama['slug']),
+                "uploadDate" => !empty($drama['created_at']) ? date('Y-m-d', strtotime($drama['created_at'])) : date('Y-m-d')
             ];
         }
 
         echo json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         ?>
     </script>
+
 
 
 
