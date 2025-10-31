@@ -35,13 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../src/output.css">
 </head>
 
-<body class="gradient-bg relative overflow-hidden">
-    <!-- Floating shapes -->
-    <!-- <div class="floating-shapes absolute inset-0 -z-10">
-        <div class="shape bg-purple-500 opacity-20 rounded-full w-40 h-40 top-10 left-10 animate-pulse"></div>
-        <div class="shape bg-pink-400 opacity-20 rounded-full w-60 h-60 bottom-20 right-20 animate-pulse"></div>
-        <div class="shape bg-blue-400 opacity-20 rounded-full w-32 h-32 top-1/2 left-1/2 animate-pulse"></div>
-    </div> -->
+<body class="relative overflow-hidden">
 
     <!-- Centered login card -->
     <div class="flex items-center justify-center min-h-screen px-4 bg-gray-900">

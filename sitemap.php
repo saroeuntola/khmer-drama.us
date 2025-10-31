@@ -1,83 +1,62 @@
 <?php
-header("Content-Type: application/xml; charset=UTF-8");
+ob_start();
+header('Content-Type: application/xml; charset=utf-8');
 
-$staticPages = [
-    [
-        'loc' => 'https://khmer-drama.org',
-        'changefreq' => 'weekly',
-        'priority' => '1.0'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/about-us',
-        'changefreq' => 'weekly',
-        'priority' => '1.0'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/contact-us',
-        'changefreq' => 'weekly',
-        'priority' => '1.0'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/assets/icons/favicon-96x96.png',
-        'changefreq' => 'weekly',
-        'priority' => '1'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/assets/icons/favicon.svg',
-        'changefreq' => 'weekly',
-        'priority' => '1'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/assets/icons/favicon.ico',
-        'changefreq' => 'weekly',
-        'priority' => '1'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/assets/icons/apple-touch-icon.png',
-        'changefreq' => 'weekly',
-        'priority' => '1'
-    ],
-    [
-    
-        'loc' => 'https://khmer-drama.org/pages/privacy-policy',
-        'changefreq' => 'weekly',
-        'priority' => '0.8'
-    ],
-   
+// Base URL
+$baseUrl = "http://k-test:8080";
+
+// Include your database and drama class
+require_once __DIR__ . '/admin/lib/db.php';
+require_once __DIR__ . '/admin/lib/drama_lib.php';
+
+$dramaObj = new Drama();
+$dramas = [];
+try {
+    $dramas = $dramaObj->getAll();
+} catch (Exception $e) {
+    $dramas = [];
+}
+
+// Static pages
+$pages = [
+    ['slug' => '', 'priority' => 1.0],
+    ['slug' => '/pages/drama', 'priority' => 1.0],
+    ['slug' => '/pages/about-us', 'priority' => 0.8],
+    ['slug' => '/pages/privacy-policy', 'priority' => 0.8],
+    ['slug' => '/pages/contact', 'priority' => 0.8],
 ];
 
-$games = [
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=mream-5-achariyeak'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=nisai-snae-moyura'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=sdach-mode'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=nak-krob-krerng-jork-veasna'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=tlak-knong-anlong-snae-oun'
-    ],
-    [
-        'loc' => 'https://khmer-drama.org/pages/view-drama?title=apea-pipea-knong-plerng-kumnum'
-    ],
-];
+ob_end_clean();
 
-// Merge all pages
-$allPages = array_merge($staticPages, $games);
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <?php foreach ($allPages as $page): ?>
+    <?php
+    $today = date('Y-m-d');
+
+    // Add static pages
+    foreach ($pages as $page):
+    ?>
         <url>
-            <loc><?= htmlspecialchars($page['loc']) ?></loc>
-            <lastmod><?= date('Y-m-d') ?></lastmod>
-            <changefreq><?= $page['changefreq'] ?? 'weekly' ?></changefreq>
-            <priority><?= $page['priority'] ?? '0.8' ?></priority>
+            <loc><?= htmlspecialchars(rtrim($baseUrl, '/') . '/' . ltrim($page['slug'], '/')) ?></loc>
+            <lastmod><?= $today ?></lastmod>
+            <changefreq>weekly</changefreq>
+            <priority><?= $page['priority'] ?></priority>
+        </url>
+    <?php endforeach; ?>
+
+    <?php
+    // Add dramas
+    foreach ($dramas as $drama):
+        $slug = urlencode($drama['slug'] ?? $drama['title'] ?? '');
+        $lastmod = !empty($drama['updated_at']) ? date('Y-m-d', strtotime($drama['updated_at'])) : $today;
+    ?>
+        <url>
+            <loc><?= htmlspecialchars("$baseUrl/pages/view-drama?title=$slug") ?></loc>
+            <lastmod><?= $lastmod ?></lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
         </url>
     <?php endforeach; ?>
 </urlset>
+<?php ob_end_flush(); ?>
