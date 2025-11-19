@@ -31,8 +31,8 @@
     <link rel="canonical" href="https://khmer-drama.org">
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg"/>
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
     <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
@@ -109,6 +109,8 @@
 </head>
 
 <body class="bg-gray-900 text-white">
+
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -138,6 +140,20 @@
     <?php
     include './pages/footer.php'
     ?>
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
+        crossorigin="anonymous"></script>
+    <!-- ad -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9457393184068455"
+        data-ad-slot="2575395744"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
 
 </html>
