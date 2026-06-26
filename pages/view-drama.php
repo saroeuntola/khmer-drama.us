@@ -323,11 +323,11 @@ if ($slug) {
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                 <?php foreach ($relatedDramas as $rDrama): ?>
                     <a href="/pages/view-drama?title=<?= htmlspecialchars($rDrama['slug']) ?>"
-                        class="block bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition w-[150px]">
+                        class="block bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition">
                         <?php if (!empty($rDrama['featured_img'])): ?>
                             <img src="/<?= htmlspecialchars($rDrama['featured_img']) ?>"
                                 alt="<?= htmlspecialchars($rDrama['title']) ?>"
-                                class="w-full h-48" loading="lazy">
+                                class="w-full h-40" loading="lazy">
                         <?php endif; ?>
                         <div class="p-2">
                             <h3 class="text-white font-semibold text-sm line-clamp-2">
