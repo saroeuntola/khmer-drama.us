@@ -101,7 +101,29 @@
             </button>
         </form>
     </div>
-    <?php include "footer.php"; ?>
+    <?php include "footer.php"; ?> 
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
+        crossorigin="anonymous"></script>
+    <!-- ads -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9457393184068455"
+        data-ad-slot="2575395744"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+<!-- grid ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9457393184068455"
+     data-ad-slot="2575395744"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
-
+ 
 </html>

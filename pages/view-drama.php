@@ -64,7 +64,7 @@ if ($slug) {
     <link rel="canonical" href="<?= 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://khmer-drama.org/<?= htmlspecialchars($drama['featured_img'] ?? 'https://khmer-drama.org/assets/icons/favicon.svg') ?>" type="image/png">
+    <link rel="icon" href="https://khmer-drama.org/assets/icons/favicon.svg" type="image/png">
 
     <!-- TailwindCSS -->
     <link rel="stylesheet" href="../src/output.css">
@@ -355,6 +355,28 @@ if ($slug) {
     <?php
     include './footer.php'
     ?>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
+        crossorigin="anonymous"></script>
+    <!-- ads -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9457393184068455"
+        data-ad-slot="2575395744"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+<!-- grid ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9457393184068455"
+     data-ad-slot="2575395744"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 
 <?php
