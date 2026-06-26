@@ -355,6 +355,7 @@ if ($slug) {
     <?php
     include './footer.php'
     ?>
+    
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
         crossorigin="anonymous"></script>
     <!-- ads -->
@@ -370,10 +371,10 @@ if ($slug) {
 <!-- grid ads -->
 <ins class="adsbygoogle"
      style="display:block"
+     data-ad-format="autorelaxed"
      data-ad-client="ca-pub-9457393184068455"
-     data-ad-slot="2575395744"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-ad-slot="8834529793">
+</ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
