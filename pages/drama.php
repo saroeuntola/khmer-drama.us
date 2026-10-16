@@ -1,4 +1,5 @@
 <?php
+require_once '../config/baseURL.php'; 
 include '../admin/lib/drama_lib.php';
 $dramaObj = new Drama();
 
@@ -94,31 +95,31 @@ $totalPages = ceil($total / $limit);
     <!-- Open Graph (Facebook, Telegram, etc.) -->
     <meta property="og:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
     <meta property="og:description" content="Watch Chinese, Korean, Thai, and Khmer dramas dubbed in Khmer language. Updated daily with HD episodes.">
-    <meta property="og:image" content="https://khmer-drama.org/assets/icons/favicon-96x96.png">
-    <meta property="og:url" content="https://khmer-drama.org/pages/drama">
+    <meta property="og:image" content="<?= $baseUrl ?>/assets/icons/favicon-96x96.png">
+    <meta property="og:url" content="<?= $baseUrl ?>/pages/drama">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
     <meta name="twitter:description" content="Watch your favorite Asian dramas dubbed in Khmer — Chinese, Korean, Thai & more.">
-    <meta name="twitter:image" content="https://khmer-drama.org/images/assets/icons/web-app-manifest-512x512.png">
+    <meta name="twitter:image" content="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://khmer-drama.org/pages/drama">
+    <link rel="canonical" href="<?= $baseUrl ?>/pages/drama">
     <link rel="stylesheet" href="../src/output.css">
 
     <!-- Favicon -->
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="<?= $baseUrl ?>/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?= $baseUrl ?>/assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="<?= $baseUrl ?>/assets/icons/favicon.ico" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/web-app-manifest-192x192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/assets/icons/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $baseUrl ?>/assets/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png" />
     <meta name="apple-mobile-web-app-title" content="Asain Drama" />
-    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+    <link rel="manifest" href="<?= $baseUrl ?>/assets/icons/site.webmanifest" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
@@ -157,14 +158,14 @@ $totalPages = ceil($total / $limit);
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "hmer Drama - Asian Drama Dubbed in Khmer",
-            "url": "https://khmer-drama.org/pages/drama",
+            "url": "<?= $baseUrl ?>/pages/drama",
             "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai & Khmer dramas with HD episodes and Khmer voice.",
             "publisher": {
                 "@type": "Organization",
                 "name": "Drama Dubbed Khmer",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://khmer-drama.org/assets/icons/favicon.svg"
+                    "url": "<?= $baseUrl ?>/assets/icons/favicon.svg"
                 }
             }
         }

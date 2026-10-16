@@ -1,3 +1,4 @@
+<?php require_once '../config/baseURL.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,36 +16,36 @@
 
     <meta property="og:title" content="About Us - Drama Dubbed Khmer">
     <meta property="og:description" content="Learn more about Drama Dubbed Khmer, our mission, team, and values.">
-    <meta property="og:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
-    <meta property="og:url" content="https://khmer-drama.org/pages/about-us">
+    <meta property="og:image" content="<?= $baseUrl ?>/assets/icons/favicon.svg">
+    <meta property="og:url" content="<?= $baseUrl ?>/pages/about-us">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Us - Drama Dubbed Khmer">
     <meta name="twitter:description" content="Learn more about Drama Dubbed Khmer, our mission, team, and values.">
-    <meta name="twitter:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
+    <meta name="twitter:image" content="<?= $baseUrl ?>/assets/icons/favicon.svg">
 
-    <link rel="canonical" href="https://khmer-drama.org/pages/about-us">
+    <link rel="canonical" href="<?= $baseUrl ?>/pages/about-us">
 
     <!-- Favicon -->
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="<?= $baseUrl ?>/assets/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?= $baseUrl ?>/assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="<?= $baseUrl ?>/assets/icons/favicon.ico" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/web-app-manifest-192x192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/assets/icons/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $baseUrl ?>/assets/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png" />
     <meta name="apple-mobile-web-app-title" content="Asain Drama" />
-    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+    <link rel="manifest" href="<?= $baseUrl ?>/assets/icons/site.webmanifest" />
 
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
-            "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/assets/icons/favicon.svg"
+            "url": "<?= $baseUrl ?>",
+            "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg"
         }
     </script>
 

@@ -1,3 +1,4 @@
+<?php require_once '../config/baseURL.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +25,8 @@
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
-            "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/assets/icons/favicon.svg"
+            "url": "<?= $baseUrl ?>/",
+            "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg"
         }
     </script>
 

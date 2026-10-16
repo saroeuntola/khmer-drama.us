@@ -1,3 +1,4 @@
+<?php require_once './config/baseURL.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
-    <title>Asian Drama Dubbed in Khmer | Chinese drama speak khmer, Korean drama speak khmer, Thai & Khmer Series</title>
+    <title>KhmerTV | Chinese drama speak khmer, Korean drama speak khmer, Thai & Khmer Series</title>
 
     <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese Drama, Korean Drama, Thai Drama, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
     <meta name="keywords" content="Chinese drama speak khmer, Korean drama speak khmer, Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
@@ -15,20 +16,20 @@
     <meta name="language" content="en">
 
     <!-- Open Graph (Facebook, Telegram, etc.) -->
-    <meta property="og:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
+    <meta property="og:title" content="KhmerTV - Asian Drama Dubbed in Khmer">
     <meta property="og:description" content="Watch Chinese, Korean, Thai, and Khmer dramas dubbed in Khmer language. Updated daily with HD episodes.">
-    <meta property="og:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
-    <meta property="og:url" content="https://khmer-drama.org/">
+    <meta property="og:image" content="<?= $baseUrl ?>/assets/icons/favicon.svg">
+    <meta property="og:url" content="<?= $baseUrl ?>/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
+    <meta name="twitter:title" content="KhmerTV - Asian Drama Dubbed in Khmer">
     <meta name="twitter:description" content="Watch your favorite Asian dramas dubbed in Khmer — Chinese, Korean, Thai & more.">
-    <meta name="twitter:image" content="https://khmer-drama.org/images/khmer-drama-cover.jpg">
+    <meta name="twitter:image" content="<?= $baseUrl ?>/images/khmer-drama-cover.jpg">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://khmer-drama.org">
+    <link rel="canonical" href="<?= $baseUrl ?>">
     <link rel="stylesheet" href="../src/output.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
@@ -38,7 +39,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/web-app-manifest-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="/assets/icons/web-app-manifest-512x512.png" />
-    <meta name="apple-mobile-web-app-title" content="Asain Drama" />
+    <meta name="apple-mobile-web-app-title" content="KhmerTV" />
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -78,8 +79,8 @@
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
-            "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/assets/icons/favicon.svg"
+            "url": "<?= $baseUrl ?>/",
+            "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg"
         }
     </script>
 
@@ -88,10 +89,10 @@
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Drama Dubbed Khmer",
-            "url": "https://khmer-drama.org/",
+            "url": "<?= $baseUrl ?>/",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://khmer-drama.org/search?query={search_term_string}",
+                "target": "<?= $baseUrl ?>/search?query={search_term_string}",
                 "query-input": "required name=search_term_string"
             },
             "publisher": {
@@ -99,7 +100,7 @@
                 "name": "Drama Dubbed Khmer",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://khmer-drama.org/assets/icons/favicon.svg"
+                    "url": "<?= $baseUrl ?>/assets/icons/favicon.svg"
                 }
             },
             "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai dramas & Khmer-dubbed series in HD."

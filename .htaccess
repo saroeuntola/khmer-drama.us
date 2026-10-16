@@ -20,7 +20,7 @@ RewriteRule ^(.*)$ $1.php [L]
 # =========================================
 # 3. Deny access to sensitive files
 # =========================================
-<FilesMatch "\.(env|ini|log|bak|sql|git|htaccess)$">
+<FilesMatch "(?i)(\.(env|ini|log|bak|sql|git|htaccess|htpasswd|conf|config|dist|example|orig|old|backup|swp|swo|tmp|temp|dump|sqlite|db|pem|key|crt|csr|sh|yml|yaml|lock)$|^db\.php$)">
     Require all denied
 </FilesMatch>
 

@@ -1,3 +1,4 @@
+<?php require_once './config/baseURL.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,18 +24,18 @@
     <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="Privacy Policy - Drama Dubbed Khmer">
     <meta property="og:description" content="Learn how Drama Dubbed Khmer protects your personal data and ensures your privacy online.">
-    <meta property="og:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
-    <meta property="og:url" content="https://khmer-drama.org/pages/privacy-policy">
+    <meta property="og:image" content="<?= $baseUrl ?>/assets/icons/favicon.svg">
+    <meta property="og:url" content="<?= $baseUrl ?>/pages/privacy-policy">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Privacy Policy - Drama Dubbed Khmer">
     <meta name="twitter:description" content="Learn how Drama Dubbed Khmer protects your personal data and ensures your privacy online.">
-    <meta name="twitter:image" content="https://khmer-drama.org/assets/icons/favicon.svg">
+    <meta name="twitter:image" content="/assets/icons/favicon.svg">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://khmer-drama.org/pages/privacy-policy">
+    <link rel="canonical" href="/pages/privacy-policy">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
@@ -52,8 +53,8 @@
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Drama Dubbed Khmer",
-            "url": "https://khmer-drama.org/",
-            "logo": "https://khmer-drama.org/assets/icons/favicon.svg"
+            "url": "<?= $baseUrl ?>",
+            "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg"
         }
     </script>
 

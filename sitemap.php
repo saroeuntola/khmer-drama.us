@@ -3,7 +3,7 @@ ob_start();
 header('Content-Type: application/xml; charset=utf-8');
 
 // Base URL
-$baseUrl = "https://khmer-drama.org";
+$baseUrl = "https://merl-rerng.org";
 
 // Include your database and drama class
 require_once __DIR__ . '/admin/lib/db.php';
