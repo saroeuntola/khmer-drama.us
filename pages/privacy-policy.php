@@ -1,4 +1,4 @@
-<?php require_once './config/baseURL.php'; ?>
+<?php require_once '../config/baseURL.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
