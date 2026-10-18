@@ -32,14 +32,14 @@
 
                 <!-- Logo -->
                 <a href="/" class=" text-xl font-bold text-white hover:opacity-70 transition-all">
-                    <img src="/assets/img/logo.png" class="w-[110px]" alt="drama dubbed khmer logo" />
+                    <img src="/assets/img/merl-rerng.png" class="w-[110px]" alt="merl rerng logo" />
                 </a>
             </div>
             <!-- Desktop: Logo + Menu -->
             <div class="hidden lg:flex justify-between items-center w-full">
                 <!-- Logo -->
                 <a href="/" class="text-xl font-bold text-white hover:opacity-70 transition-all">
-                    <img src="/assets/img/logo.png" class="logo" alt="drama dubbed khmer logo" />
+                    <img src="/assets/img/merl-rerng.png" class="logo" alt="merl rerng logo" />
                 </a>
 
                 <!-- Menu Items -->
