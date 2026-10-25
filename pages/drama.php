@@ -1,6 +1,7 @@
 <?php
 require_once '../config/baseURL.php'; 
 include '../admin/lib/drama_lib.php';
+$faviconVersion = '2.0';
 $dramaObj = new Drama();
 
 // Define the category slugs in the order you want
@@ -78,23 +79,26 @@ $totalPages = ceil($total / $limit);
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="main">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
-    <title>Asian Drama Dubbed in Khmer | Chinese, Korean, Thai & Khmer Series </title>
+    <title>All Moives Drama - Merl Rerng</title>
 
-    <meta name="description" content="Watch the best Asian dramas dubbed in Khmer — including Chinese, Korean, Thai, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
-    <meta name="keywords" content="china drama speak khmer, Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
+    <meta name="description"
+        content="Watch the best Asian dramas dubbed in Khmer — including Chinese, Korean, Thai, and Khmer dramas. Enjoy full episodes with Khmer voice dub and daily updates.">
+    <meta name="keywords"
+        content="china drama speak khmer, Khmer drama, Asian drama, Chinese drama dubbed Khmer, Korean drama dubbed Khmer, Thai drama dubbed Khmer, Khmer series, Khmer voice dub, Cambodia drama site">
 
     <meta name="author" content="Drama Dubbed Khmer">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph (Facebook, Telegram, etc.) -->
     <meta property="og:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
-    <meta property="og:description" content="Watch Chinese, Korean, Thai, and Khmer dramas dubbed in Khmer language. Updated daily with HD episodes.">
+    <meta property="og:description"
+        content="Watch Chinese, Korean, Thai, and Khmer dramas dubbed in Khmer language. Updated daily with HD episodes.">
     <meta property="og:image" content="<?= $baseUrl ?>/assets/icons/favicon-96x96.png">
     <meta property="og:url" content="<?= $baseUrl ?>/pages/drama">
     <meta property="og:type" content="website">
@@ -102,127 +106,132 @@ $totalPages = ceil($total / $limit);
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Khmer Drama - Asian Drama Dubbed in Khmer">
-    <meta name="twitter:description" content="Watch your favorite Asian dramas dubbed in Khmer — Chinese, Korean, Thai & more.">
+    <meta name="twitter:description"
+        content="Watch your favorite Asian dramas dubbed in Khmer — Chinese, Korean, Thai & more.">
     <meta name="twitter:image" content="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="<?= $baseUrl ?>/pages/drama">
-    <link rel="stylesheet" href="../src/output.css">
-
+    <link rel="stylesheet" href="../src/output.css?=v=<?= time() ?>">
+    <link rel="stylesheet" href="../src/style.css">
     <!-- Favicon -->
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?= $baseUrl ?>/assets/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="<?= $baseUrl ?>/assets/icons/favicon.svg" />
-    <link rel="shortcut icon" href="<?= $baseUrl ?>/assets/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="<?= $baseUrl ?>/assets/icons/favicon-96x96.png?v=<?= $faviconVersion ?>"
+        sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?= $baseUrl ?>/assets/icons/favicon.svg?v=<?= $faviconVersion ?>" />
+    <link rel="shortcut icon" href="<?= $baseUrl ?>/assets/icons/favicon.ico?v=<?= $faviconVersion ?>" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= $baseUrl ?>/assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-192x192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?= $baseUrl ?>/assets/icons/apple-touch-icon.png?v=<?= $faviconVersion ?>" />
+    <link rel="apple-touch-icon" sizes="192x192"
+        href="<?= $baseUrl ?>/assets/icons/web-app-manifest-192x192.png?v=<?= $faviconVersion ?>" />
+    <link rel="apple-touch-icon" sizes="512x512"
+        href="<?= $baseUrl ?>/assets/icons/web-app-manifest-512x512.png?v=<?= $faviconVersion ?>" />
     <meta name="apple-mobile-web-app-title" content="Asain Drama" />
     <link rel="manifest" href="<?= $baseUrl ?>/assets/icons/site.webmanifest" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        gtag('config', 'G-2DNHSGCJ65');
+    gtag('config', 'G-2DNHSGCJ65');
     </script>
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
 
     <!-- Schema Markup (SEO JSON-LD) -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "hmer Drama - Asian Drama Dubbed in Khmer",
-            "url": "<?= $baseUrl ?>/pages/drama",
-            "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai & Khmer dramas with HD episodes and Khmer voice.",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Drama Dubbed Khmer",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "<?= $baseUrl ?>/assets/icons/favicon.svg"
-                }
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "hmer Drama - Asian Drama Dubbed in Khmer",
+        "url": "<?= $baseUrl ?>/pages/drama",
+        "description": "Watch Asian dramas dubbed in Khmer: Chinese, Korean, Thai & Khmer dramas with HD episodes and Khmer voice.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Drama Dubbed Khmer",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "<?= $baseUrl ?>/assets/icons/favicon.svg"
             }
         }
+    }
     </script>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <?php
     include 'navbar.php'
     ?>
-    <main class="max-w-5xl mx-auto px-4 py-5 pt-28">
+    <main class="main">
+        <section class="max-w-5xl mx-auto px-4 pt-24">
 
-        <!-- Category Filter Tabs -->
-        <div id="category-tabs" class="flex overflow-x-auto space-x-3 mb-6 pb-2 scrollbar-hide">
-            <a href="?cat=all"
-                class="filter-btn px-4 py-2 rounded-full text-sm whitespace-nowrap <?= $categorySlug === 'all' ? 'bg-green-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-800' ?>">All</a>
-            <?php foreach ($categories as $cat): ?>
+            <!-- Category Filter Tabs -->
+            <div id="category-tabs" class="flex overflow-x-auto space-x-3 mb-6 pb-2 scrollbar-hide">
+                <a href="?cat=all"
+                    class="filter-btn px-4 py-2 rounded-full text-sm whitespace-nowrap <?= $categorySlug === 'all' ? 'bg-green-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-800' ?>">All</a>
+                <?php foreach ($categories as $cat): ?>
                 <a href="?cat=<?= htmlspecialchars($cat['slug']) ?>"
                     class="filter-btn px-4 py-2 rounded-full text-sm whitespace-nowrap <?= $categorySlug === $cat['slug'] ? 'bg-green-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-800' ?>">
                     <?= htmlspecialchars($cat['name']) ?>
                 </a>
-            <?php endforeach; ?>
-        </div>
-
-
-        <!-- Dramas Grid -->
-        <div id="drama-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <?php if (empty($dramas)): ?>
-                <div class="col-span-full text-center text-white py-6">No dramas found.</div>
-            <?php else: ?>
-                <?php foreach ($dramas as $drama): ?>
-                    <div class="drama-card bg-gray-700 rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-                        <a href="/pages/view-drama?title=<?= htmlspecialchars($drama['slug']) ?>">
-                            <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
-                                alt="<?= htmlspecialchars($drama['title']) ?>" class="w-full h-40" loading="lazy">
-                            <div class="p-3">
-                                <h3 class=" font-semibold text-white"><?= htmlspecialchars($drama['title']) ?></h3>
-                            </div>
-                        </a>
-                    </div>
                 <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+            </div>
 
-        <!-- Pagination -->
-        <?php if ($totalPages > 1): ?>
+
+            <!-- Dramas Grid -->
+            <div id="drama-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <?php if (empty($dramas)): ?>
+                <div class="col-span-full text-center text-white py-6">No dramas found.</div>
+                <?php else: ?>
+                <?php foreach ($dramas as $drama): ?>
+                <div class="drama-card bg-gray-700 rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+                    <a href="/pages/view-drama?title=<?= htmlspecialchars($drama['slug']) ?>">
+                        <img src="/<?= htmlspecialchars($drama['featured_img'] ?? 'no-image.jpg') ?>"
+                            alt="<?= htmlspecialchars($drama['title']) ?>" class="w-full h-40" loading="lazy">
+                        <div class="p-3">
+                            <h3 class=" font-semibold text-white"><?= htmlspecialchars($drama['title']) ?></h3>
+                        </div>
+                    </a>
+                </div>
+                <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+
+            <!-- Pagination -->
+            <?php if ($totalPages > 1): ?>
             <div class="flex flex-wrap justify-center items-center mt-8 sm:text-base gap-2">
                 <!-- Prev Button -->
                 <?php if ($page > 1): ?>
-                    <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page - 1 ?>"
-                        class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
-                        « Prev
-                    </a>
+                <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page - 1 ?>"
+                    class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
+                    « Prev
+                </a>
                 <?php endif; ?>
 
                 <?php
@@ -238,10 +247,10 @@ $totalPages = ceil($total / $limit);
                         ($i >= $page - $visibleRange && $i <= $page + $visibleRange)
                     ):
                 ?>
-                        <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $i ?>"
-                            class="lg:px-3 lg:py-1 px-4 py-2 rounded <?= $i == $page ? 'bg-indigo-500 text-white' : 'bg-green-600 text-white hover:bg-indigo-500' ?>">
-                            <?= $i ?>
-                        </a>
+                <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $i ?>"
+                    class="lg:px-3 lg:py-1 px-4 py-2 rounded <?= $i == $page ? 'bg-indigo-500 text-white' : 'bg-green-600 text-white hover:bg-indigo-500' ?>">
+                    <?= $i ?>
+                </a>
                 <?php
                     // Add ellipsis before skipped pages (left)
                     elseif ($i < $page && !$ellipsisShownLeft):
@@ -258,64 +267,59 @@ $totalPages = ceil($total / $limit);
 
                 <!-- Next Button -->
                 <?php if ($page < $totalPages): ?>
-                    <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page + 1 ?>"
-                        class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
-                        Next »
-                    </a>
+                <a href="?cat=<?= htmlspecialchars($categorySlug) ?>&page=<?= $page + 1 ?>"
+                    class="lg:px-3 lg:py-1 px-4 py-2 bg-green-600 text-white rounded hover:bg-indigo-500">
+                    Next »
+                </a>
                 <?php endif; ?>
             </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
 
+        </section>
     </main>
+
     <?php
     include 'footer.php'
     ?>
     <script>
-        const tabs = document.getElementById('category-tabs');
-        const savedScroll = localStorage.getItem('tabsScroll');
-        if (savedScroll) {
-            tabs.scrollLeft = savedScroll;
-        }
-        tabs.addEventListener('scroll', () => {
-            localStorage.setItem('tabsScroll', tabs.scrollLeft);
-        });
-        window.addEventListener('beforeunload', () => {
-            localStorage.setItem('tabsScroll', tabs.scrollLeft);
-        });
+    const tabs = document.getElementById('category-tabs');
+    const savedScroll = localStorage.getItem('tabsScroll');
+    if (savedScroll) {
+        tabs.scrollLeft = savedScroll;
+    }
+    tabs.addEventListener('scroll', () => {
+        localStorage.setItem('tabsScroll', tabs.scrollLeft);
+    });
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('tabsScroll', tabs.scrollLeft);
+    });
     </script>
     <style>
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
 
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
     </style>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
         crossorigin="anonymous"></script>
     <!-- ads -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9457393184068455"
-        data-ad-slot="2575395744"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9457393184068455" data-ad-slot="2575395744"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-<!-- grid ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-9457393184068455"
-     data-ad-slot="8834529793">
-</ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- grid ads -->
+    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-9457393184068455"
+        data-ad-slot="8834529793">
+    </ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
 
 </html>

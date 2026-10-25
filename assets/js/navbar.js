@@ -133,3 +133,15 @@ searchBox.addEventListener(
       });
   }, 300)
 );
+
+const closeSearchBtn = document.getElementById("close-search");
+
+if (closeSearchBtn) {
+    closeSearchBtn.addEventListener("click", closeSearchModal);
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeSearchModal();
+    }
+});

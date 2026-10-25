@@ -1,4 +1,7 @@
-<?php require_once '../config/baseURL.php'; ?>
+<?php 
+require_once '../config/baseURL.php';
+$faviconVersion = '2.0';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,75 +9,78 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="1WdVsgK6zvbUzlnduZ_ajBdnKxk3fWDHW-HlV-JPE3g" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Drama Dubbed Khmer</title>
-    <link rel="stylesheet" href="../src/output.css">
-
+    <title>Contact Us - Merl Rerng</title>
+    <link rel="stylesheet" href="../src/output.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="../src/style.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/icons/favicon-96x96.png" sizes="96x96?v=<?= $faviconVersion ?>" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg?v=<?= $faviconVersion ?>" />
     <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/web-app-manifest-192x192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/assets/icons/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png?v=<?= $faviconVersion ?>" />
+    <link rel="apple-touch-icon" sizes="192x192"
+        href="/assets/icons/web-app-manifest-192x192.png?v=<?= $faviconVersion ?>" />
+    <link rel="apple-touch-icon" sizes="512x512"
+        href="/assets/icons/web-app-manifest-512x512.png?v=<?= $faviconVersion ?>" />
     <meta name="apple-mobile-web-app-title" content="Asain Drama" />
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
 
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Drama Dubbed Khmer",
-            "url": "<?= $baseUrl ?>/",
-            "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg"
-        }
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Drama Dubbed Khmer",
+        "url": "<?= $baseUrl ?>/",
+        "logo": "<?= $baseUrl ?>/assets/icons/favicon.svg?v=<?= $faviconVersion ?>"
+    }
     </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DNHSGCJ65"></script>
 
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        gtag('config', 'G-2DNHSGCJ65');
+    gtag('config', 'G-2DNHSGCJ65');
     </script>
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WZ349ZZZ');
     </script>
     <!-- End Google Tag Manager -->
 </head>
 
-<body class="bg-gray-900 text-gray-100">
+<body class="main">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZ349ZZZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <?php include "navbar.php"; ?>
     <div class="max-w-5xl mx-auto px-6 py-12 pt-[120px]">
         <h1 class="text-4xl font-bold mb-6 text-center text-indigo-500">Contact Us</h1>
 
         <p class="mb-6 text-lg leading-relaxed">
-            Have questions, suggestions, or want to report content? We’d love to hear from you! Please fill out the form below or email us directly at
-            <a href="mailto:info@khmer-drama.org" class="text-indigo-400 underline">info@khmer-drama.org</a>.
+            Have questions, suggestions, or want to report content? We’d love to hear from you! Please fill out the form
+            below or email us directly at
+            <a href="mailto:info@merlrerng.org" class="text-indigo-400 underline">info@merlrerng.org</a>.
         </p>
 
         <form action="#" method="POST" class="bg-gray-800 p-8 rounded-lg shadow-md">
@@ -102,29 +108,22 @@
             </button>
         </form>
     </div>
-    <?php include "footer.php"; ?> 
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
+    <?php include "footer.php"; ?>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9457393184068455"
         crossorigin="anonymous"></script>
     <!-- ads -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9457393184068455"
-        data-ad-slot="2575395744"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9457393184068455" data-ad-slot="2575395744"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-<!-- grid ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-9457393184068455"
-     data-ad-slot="8834529793">
-</ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- grid ads -->
+    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-9457393184068455"
+        data-ad-slot="8834529793">
+    </ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
- 
+
 </html>
