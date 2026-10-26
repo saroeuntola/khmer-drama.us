@@ -7,13 +7,29 @@ $latestDramas = $dramaObj->getAllStatus0(9);
 <section class="w-full pt-22 main">
     <div class="max-w-5xl mx-auto px-4">
 
-        <div class="flex justify-between item-center mb-3 text-white">
-            <h2 class="text-xl lg:text-2xl font-bold text-white">
-                Latest Drama
+        <div class="flex items-center gap-2 sm:gap-3 mb-4 text-white">
+
+            <!-- Accent Line -->
+            <div class="w-1 h-6 sm:h-7 bg-gradient-to-b from-purple-400 to-indigo-600 rounded-full shrink-0"></div>
+
+            <!-- SEO-friendly Section Heading -->
+            <h2 class="text-lg sm:text-xl lg:text-2xl font-bold leading-tight tracking-tight whitespace-nowrap">
+                Latest Update
             </h2>
-            <a href="/pages/drama?cat=all" class="px-2 lg:px-4 py-1 lg:py-2 bg-indigo-500 rounded text-sm">
+
+            <!-- Divider -->
+            <div class="flex-1 h-px bg-gradient-to-r from-indigo-500/60 to-transparent"></div>
+
+            <!-- See All -->
+            <a href="/pages/drama?cat=korean-drama"
+                class="group inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors duration-200 whitespace-nowrap">
                 See All
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-200 group-hover:translate-x-1"
+                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
             </a>
+
         </div>
 
         <!-- Mobile/Tablet Scrollable Section -->

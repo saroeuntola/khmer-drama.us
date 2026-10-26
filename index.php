@@ -124,6 +124,9 @@
     include './pages/latest-section.php'
     ?>
         <?php
+    include './pages/ai-movies-section.php'
+    ?>
+        <?php
     include './pages/china-section.php'
     ?>
         <?php
