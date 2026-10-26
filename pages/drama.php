@@ -6,6 +6,7 @@ $dramaObj = new Drama();
 
 // Define the category slugs in the order you want
 $orderedSlugs = [
+    'chinese-movie',
     'chinese-drama',
     'korean-drama',
     'khmer-drama',
@@ -183,12 +184,20 @@ $totalPages = ceil($total / $limit);
             <div id="category-tabs" class="flex overflow-x-auto space-x-3 mb-6 pb-2 scrollbar-hide">
                 <a href="?cat=all"
                     class="filter-btn px-4 py-2 rounded-full text-sm whitespace-nowrap <?= $categorySlug === 'all' ? 'bg-green-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-800' ?>">All</a>
+
                 <?php foreach ($categories as $cat): ?>
+                <?php
+        $displayName = $cat['name'] === 'Chinese Movie'
+            ? 'AI Movies'
+            : $cat['name'];
+    ?>
+
                 <a href="?cat=<?= htmlspecialchars($cat['slug']) ?>"
                     class="filter-btn px-4 py-2 rounded-full text-sm whitespace-nowrap <?= $categorySlug === $cat['slug'] ? 'bg-green-600 text-white' : 'bg-indigo-500 text-white hover:bg-indigo-800' ?>">
-                    <?= htmlspecialchars($cat['name']) ?>
+                    <?= htmlspecialchars($displayName) ?>
                 </a>
                 <?php endforeach; ?>
+
             </div>
 
 
